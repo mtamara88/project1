@@ -1,0 +1,87 @@
+.container {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-areas: "hd hd" "nav nav" "main  main" "ft  ft";
+    grid-template-rows: 80px 60px 1fr 60px;
+    grid-template-columns: 150px 1fr;
+}
+
+#post-1 {
+    grid-area: post1;
+}
+
+#post-2 {
+    grid-area: post2;
+}
+
+#post-3 {
+    grid-area: post3;
+}
+
+#post-4 {
+    grid-area: post4;
+}
+
+.blog-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
+    box-shadow: 2px 2px 6px grey;
+    background: #fff;
+    border-radius: 2%;
+    text-align: center;
+    padding: 1rem;
+    line-height: 1.5em;
+}
+
+.blog-card:hover {
+    box-shadow: 3px 3px 7px 3px grey;
+}
+
+.blog-card img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.read-more {
+    padding: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #3cadc7;
+    border: 2.5px solid #3cadc7;
+    border-radius: 5px;
+    font-size: 0.7em;
+}
+
+.read-more:hover {
+    box-shadow: 3px 3px 3px #3cadc7;
+}
+
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: 80px 50px 1fr 50px;
+        grid-template-areas: "hd hd hd hd hd hd hd hd" "nav nav nav nav nav nav nav nav" "main main main main main main main main" "ft ft ft ft ft ft ft ft";
+    }
+    #main {
+        grid-template-columns: 100%;
+        grid-template-rows: max-content min-content;
+        grid-template-areas: "post1" "post2" "post3" "post4";
+    }
+    nav {
+        padding: 1.2rem;
+    }
+    .blog-card {
+        flex-direction: column;
+        margin: 1rem;
+        padding: 1.5rem;
+        text-align: left;
+    }
+    .blog-card img {
+        width: 100%;
+        object-fit: cover;
+    }
+}
