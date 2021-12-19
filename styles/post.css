@@ -86,6 +86,14 @@ blockquote {
     margin: 2rem;
 }
 
+figure {
+    width: 100%;
+}
+
+figcaption {
+    text-align: center;
+}
+
 @media (max-width: 900px) {
     .container {
         grid-template-columns: repeat(8, 1fr);
